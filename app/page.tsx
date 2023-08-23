@@ -1,4 +1,4 @@
-import BodyComp from './components/BodyComp'
+import BodyComp from './components/body/BodyComp'
 
 const Home = () => {
   return <BodyComp />

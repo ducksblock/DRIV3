@@ -1,4 +1,5 @@
-import * as React from "react"
+'use client'
+
 import { SVGProps } from "react"
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg

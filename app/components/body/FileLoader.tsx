@@ -1,4 +1,5 @@
 'use client'
+
 import SvgComponent from './SvgComponent'
 
 const FileLoader = () => {
@@ -10,7 +11,7 @@ const FileLoader = () => {
         <div className="flex items-center space-x-2">
             <SvgComponent className='fill-white w-10' />
             <div className="font-medium text-2xl text-white">
-                Choose Files
+                Choose File
             </div>
         </div>
         <input type="file" name="file_upload" className="hidden" />

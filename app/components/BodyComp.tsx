@@ -2,7 +2,7 @@
 
 import '@rainbow-me/rainbowkit/styles.css'
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
-import { configureChains, createConfig, WagmiConfig } from 'wagmi'
+import { configureChains, createConfig, WagmiConfig, useAccount } from 'wagmi'
 import { mainnet, polygon, optimism, arbitrum, base, zora } from 'wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
@@ -33,9 +33,8 @@ const wagmiConfig = createConfig({
 const BodyComp = () => {
 
   return (
-    <main>
+    <main className='fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center bg-slate-100 dark:bg-slate-900'>
       <WagmiConfig config={wagmiConfig}>
-        <div className='fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center bg-slate-100 dark:bg-slate-900'>
           <RainbowKitProvider
             chains={chains}
             modalSize='compact'
@@ -49,12 +48,16 @@ const BodyComp = () => {
             }}
           >
             <ConnectButton />
+            <LoadFile />
           </RainbowKitProvider>
-        </div>
-        <FileLoader />
       </WagmiConfig>
     </main>
   )
+}
+
+function LoadFile() {
+  const { isConnected } = useAccount()
+  return isConnected ? <FileLoader/> : null
 }
 
 export default BodyComp

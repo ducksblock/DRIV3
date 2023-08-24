@@ -32,7 +32,19 @@ const wagmiConfig = createConfig({
 
 const BodyComp = () => {
   return (
-    <main className='fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center bg-slate-100 dark:bg-slate-900'>
+    <main
+      className='
+      fixed 
+      left-0 
+      right-0 
+      top-0 
+      bottom-0 
+      flex 
+      justify-center 
+      items-center 
+      bg-slate-100 
+      dark:bg-slate-900'
+    >
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider
           chains={chains}

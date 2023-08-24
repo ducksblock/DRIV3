@@ -30,6 +30,11 @@ const wagmiConfig = createConfig({
   publicClient,
 })
 
+function LoadFile() {
+  const { isConnected } = useAccount()
+  return isConnected ? <FileLoader /> : null
+}
+
 const BodyComp = () => {
   return (
     <main
@@ -64,11 +69,6 @@ const BodyComp = () => {
       </WagmiConfig>
     </main>
   )
-}
-
-function LoadFile() {
-  const { isConnected } = useAccount()
-  return isConnected ? <FileLoader /> : null
 }
 
 export default BodyComp
